@@ -1,7 +1,5 @@
 <!-- src/app/app.component.html -->
 <h1>{{ (user$ | async)?.providerData?.[0]?.displayName }}</h1>
-<button (click)="loginWithGoogle()">Login with Google</button>
-<button (click)="logout()">Logout</button>
 <app-login></app-login>
 
 
