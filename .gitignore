@@ -50,4 +50,5 @@ Thumbs.db
 .angular
 
 # Package Lock
-pacjage-lock.json
+package-lock.json
+bun.lockb
