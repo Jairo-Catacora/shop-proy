@@ -9,11 +9,14 @@ import {
   User,
 } from '@angular/fire/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { RouterOutlet } from '@angular/router';
+import { MainComponent } from "./main/main.component";
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AuthModule, AsyncPipe, JsonPipe],
+  imports: [RouterOutlet, MainComponent, LoginComponent,AuthModule, AsyncPipe, JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
