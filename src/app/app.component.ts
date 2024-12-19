@@ -14,11 +14,10 @@ import { MainComponent } from "./main/main.component";
 import { LoginComponent } from './login/login.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, MainComponent, LoginComponent,AuthModule, AsyncPipe, JsonPipe],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [RouterOutlet, MainComponent, LoginComponent, AuthModule, AsyncPipe, JsonPipe],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'shop';

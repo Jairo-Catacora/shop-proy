@@ -47,8 +47,8 @@ Thumbs.db
 .runtimeconfig.json
 
 # Angular Cache
-.angular
+/.angular
 
 # Package Lock
-package-lock.json
-bun.lockb
+/package-lock.json
+/bun.lockb
