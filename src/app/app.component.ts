@@ -12,18 +12,11 @@ import { MainComponent } from "./main/main.component";
 import { LoginComponent } from './login/login.component';
 
 @Component({
-<<<<<<< HEAD
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MainComponent, LoginComponent, AuthModule, AsyncPipe, JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-=======
-    selector: 'app-root',
-    imports: [RouterOutlet, MainComponent, LoginComponent, AuthModule, AsyncPipe, JsonPipe],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
->>>>>>> ba0fc33adc2d328fafc542ecb21dd9e3e2e7c2b8
 })
 export class AppComponent {
   title = 'shop';

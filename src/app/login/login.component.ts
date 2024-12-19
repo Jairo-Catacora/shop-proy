@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,22 +7,21 @@ import { MatCardModule } from '@angular/material/card';
 import {
   Auth,
   GoogleAuthProvider,
-  onAuthStateChanged,
   signInWithPopup,
   User,
+  onAuthStateChanged,
 } from '@angular/fire/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatButtonModule, MatInputModule, MatFormFieldModule, MatCardModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatCardModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
- 
   private userSubject: BehaviorSubject<User | null> =
     new BehaviorSubject<User | null>(null);
   public user$: Observable<User | null> = this.userSubject.asObservable();
@@ -51,7 +50,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      console.log('Form Value:', this.loginForm.value);
     }
   }
 }
