@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 import {
   Auth,
   AuthModule,
-  GoogleAuthProvider,
   onAuthStateChanged,
-  signInWithPopup,
   User,
 } from '@angular/fire/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -16,7 +14,7 @@ import { LoginComponent } from './login/login.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainComponent, LoginComponent,AuthModule, AsyncPipe, JsonPipe],
+  imports: [RouterOutlet, MainComponent, LoginComponent, AuthModule, AsyncPipe, JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -30,14 +28,5 @@ export class AppComponent {
     onAuthStateChanged(auth, (user) => {
       this.userSubject.next(user);
     });
-  }
-
-  async loginWithGoogle(): Promise<void> {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(this.auth, new GoogleAuthProvider());
-  }
-
-  async logout(): Promise<void> {
-    await this.auth.signOut();
   }
 }

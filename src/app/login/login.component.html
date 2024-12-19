@@ -1,15 +1,34 @@
-<form (ngSubmit)="onSubmit()">
-  <label for="email">Usuario:</label>
-  <input type="email" id="email" [(ngModel)]="email" name="email" required />
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+        />
+      </mat-form-field>
 
-  <label for="password">Contraseña:</label>
-  <input
-    type="password"
-    id="password"
-    [(ngModel)]="password"
-    name="password"
-    required
-  />
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </mat-form-field>
 
-  <button type="submit">Login</button>
-</form>
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+    <button mat-raised-button color="accent" (click)="loginWithGoogle()">
+      Login with Google
+    </button>
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+  </mat-card-content>
+</mat-card>
